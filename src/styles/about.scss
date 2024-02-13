@@ -1,0 +1,22 @@
+.about-content {
+  margin: 0 20px;
+}
+
+.band-about {
+  height: 100%;
+  margin-bottom: 40px;
+  img {
+    display: flex;
+    margin: 0 auto;
+    width: 1240px;
+    height: 223px;
+    object-fit: cover;
+    border-radius: 25px;
+    filter: brightness(70%);
+  }
+}
+
+.colaps__box {
+  margin-top: 0px;
+  margin-bottom: 40px;
+}

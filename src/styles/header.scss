@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  margin: 40px auto;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  &__nav {
+    display: flex;
+    gap: 50px;
+    a {
+      color: black;
+      text-decoration: none;
+      font-family: 'Monserrat', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}
+
+.active {
+  border-bottom: solid 2px black;
+}

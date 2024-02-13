@@ -1,0 +1,27 @@
+.collapse {
+  display: flex;
+  flex-direction: column;
+  max-width: 1023px;
+  background-color: #f6f6f6;
+  margin: 0 auto 40px auto;
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    background-color: #ff6060;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  &__content {
+    padding: 15px;
+  }
+  img {
+    cursor: pointer;
+  }
+}
+
+.toogleAnimation {
+  height: 0;
+  transition: height 200ms;
+}
