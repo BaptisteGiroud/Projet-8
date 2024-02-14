@@ -4,14 +4,36 @@ import Error from '../Error/index.jsx'
 import Carousel from '../../components/Carousel/index.jsx'
 import { useParams } from 'react-router-dom'
 import { AppartmentsList } from '../../datas/logements.js'
+import star from '../../assets/star.png'
+import starGrey from '../../assets/star-grey.png'
 
 function Appartment() {
   const { id } = useParams()
   const appartmentData = AppartmentsList.find(
     (appartment) => appartment.id === id
   )
-  console.log(appartmentData.pictures[0])
-  console.log(appartmentData.title)
+
+  /** Génération des stars */
+  let generateStarts = () => {
+    let html = ''
+    for (let i = 1; i <= 5; i++) {
+      let rating = parseInt(appartmentData.rating)
+
+      if (i <= rating) {
+        html += `<li><img src="${star}" alt="Etoile pleine" /></li>`
+      } else {
+        html += `<li><img src="${starGrey}" alt="Etoile vide" /></li>`
+      }
+    }
+    return (
+      <ul
+        className={'profil__rate'}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    )
+  }
+
+  /** Recupération des data de l'appartement */
 
   if (!appartmentData) {
     return <Error />
@@ -20,7 +42,7 @@ function Appartment() {
       <div className="section">
         <div className="band-appartment">
           <Carousel
-            source={appartmentData.pictures[0]}
+            source={appartmentData.pictures}
             title={appartmentData.title}
           />
         </div>
@@ -42,7 +64,7 @@ function Appartment() {
                 <p>{appartmentData.host.name}</p>
                 <img src={appartmentData.host.picture} alt="Profil de l'hôte" />
               </div>
-              <div className="profil__rate">Stars</div>
+              {generateStarts()}
             </div>
           </div>
           <div className="details__collapse">

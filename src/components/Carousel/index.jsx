@@ -1,31 +1,38 @@
 import '../../styles/carousel.scss'
 import leftArrow from '../../assets/leftArrow.png'
 import rightArrow from '../../assets/rightArrow.png'
+import { useState } from 'react'
 
 function Carousel({ source, title }) {
-  let i = 0
-  let indexMax = source.lenght
-  let indexActive = source[i]
-  console.log(indexMax)
-  console.log(indexActive)
+  let indexMax = source.length
+  let [activeIndex, setActiveIndex] = useState(0)
+
+  let movedLeft = () => {
+    setActiveIndex((index) => (index === 0 ? source.length - 1 : index - 1))
+  }
+  let movedRight = () => {
+    setActiveIndex((index) => (index === source.length - 1 ? 0 : index + 1))
+  }
 
   return (
     <div className="carousel">
-      {source.lenght !== 0 ? (
+      {source.length > 1 ? (
         <div className="carousel__nav">
           <img
+            onClick={movedLeft}
             className="leftArrow"
             src={leftArrow}
             alt="Fleche de navigation de gauche"
           />
           <img
+            onClick={movedRight}
             className="rightArrow"
             src={rightArrow}
             alt="Fleche de navigation de droite"
           />
           <div className="index">
             <p>
-              {indexActive}/{indexMax}
+              {parseInt(activeIndex + 1)}/{indexMax}
             </p>
           </div>
         </div>
@@ -35,7 +42,7 @@ function Carousel({ source, title }) {
 
       <img
         className="carousel__pictures"
-        src={source}
+        src={source[activeIndex]}
         alt={`Bandeau pour ${title}`}
       />
     </div>

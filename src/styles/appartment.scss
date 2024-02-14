@@ -1,8 +1,3 @@
-// .section {
-//   flex-grow: 1;
-//   height: 100%;
-// }
-
 .details {
   display: flex;
   flex-direction: column;
@@ -22,22 +17,24 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    ul {
-      display: flex;
-      gap: 10px;
-      li {
+    .tag {
+      ul {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #ff6060;
-        color: white;
-        font-weight: 600;
-        font-size: 14px;
-        border-radius: 10px;
-        min-width: 125px;
-        height: 25px;
-        padding: 0 20px;
-        margin: 15px 0;
+        gap: 10px;
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #ff6060;
+          color: white;
+          font-weight: 600;
+          font-size: 14px;
+          border-radius: 10px;
+          min-width: 125px;
+          height: 25px;
+          padding: 0 20px;
+          margin: 15px 0;
+        }
       }
     }
   }
@@ -61,6 +58,7 @@
   margin-bottom: 15px;
   &__host {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     color: #ff6060;
     img {
@@ -75,6 +73,7 @@
   }
   &__rate {
     display: flex;
+    flex-direction: row;
     justify-content: right;
   }
 }

@@ -6,6 +6,7 @@ import angleUp from '../../assets/angleUp.png'
 function Colaps({ title_collapse, content_collapse }) {
   let [displayCollapse, setDisplay] = useState(false)
   let [buttonCollapse, setButton] = useState(angleUp)
+
   let toggleCollapse = () => {
     if (displayCollapse === false) {
       setDisplay(true)
@@ -15,6 +16,8 @@ function Colaps({ title_collapse, content_collapse }) {
       setButton(angleUp)
     }
   }
+
+  let toogleAnimation = displayCollapse ? 'collapseExpend' : 'collapseHidden'
 
   return (
     <div className="collapse">
@@ -26,7 +29,9 @@ function Colaps({ title_collapse, content_collapse }) {
           alt="Bouton ouvrir ou fermer"
         />
       </div>
-      <div className="collapse__content">{content_collapse}</div>
+      <div className={`collapse__content ${toogleAnimation}`}>
+        {content_collapse}
+      </div>
     </div>
   )
 }

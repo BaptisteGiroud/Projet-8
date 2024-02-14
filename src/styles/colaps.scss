@@ -2,8 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 1023px;
-  background-color: #f6f6f6;
-  margin: 0 auto 40px auto;
+  margin: 0 auto;
   &__title {
     display: flex;
     align-items: center;
@@ -14,6 +13,7 @@
     border-radius: 5px;
   }
   &__content {
+    background-color: #f6f6f6;
     padding: 15px;
   }
   img {
@@ -21,7 +21,23 @@
   }
 }
 
-.toogleAnimation {
-  height: 0;
-  transition: height 200ms;
+.collapseHidden {
+  overflow: hidden;
+  transition: clip-path 0.3s ease-out, transform 0.3s ease-out,
+    max-height 0.3s ease-out, margin-bottom 0.3s ease-out;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transform: translateY(-40px);
+  max-height: 0;
+  z-index: -10;
+  margin-bottom: 10px;
+}
+
+.collapseExpend {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 0.3s ease-in, transform 0.3s ease-in,
+    max-height 0.3s ease-in, margin-bottom 0.3s ease-in;
+  transform: translateY(0);
+  max-height: 1000px;
+  z-index: -10;
+  margin-bottom: 40px;
 }

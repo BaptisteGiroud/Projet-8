@@ -5,10 +5,13 @@
     object-fit: cover;
   }
   &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
     height: 50px;
     width: 200px;
-    position: absolute;
-    margin-top: -50px;
+    margin-top: -60px;
     margin-left: 10px;
     color: white;
     font-weight: 600;
