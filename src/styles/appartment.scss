@@ -21,6 +21,8 @@
       ul {
         display: flex;
         gap: 10px;
+        margin: 15px 0;
+
         li {
           display: flex;
           justify-content: center;
@@ -33,7 +35,6 @@
           min-width: 125px;
           height: 25px;
           padding: 0 20px;
-          margin: 15px 0;
         }
       }
     }

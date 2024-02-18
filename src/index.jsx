@@ -8,6 +8,7 @@ import Home from './pages/Home/index'
 import Footer from './components/Footer/index'
 import Appartment from './pages/Appartment/index'
 import Error from './pages/Error/index'
+import './styles/responsive.scss'
 
 ReactDOM.render(
   <React.StrictMode>

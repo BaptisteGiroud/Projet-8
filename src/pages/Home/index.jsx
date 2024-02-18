@@ -8,7 +8,7 @@ function Home() {
     <div className="home-content">
       <div className="home-content__band-home">
         <h1 className="home-content__band-home__txt">
-          Chez vous, partout et ailleurs
+          Chez vous,<span></span> partout et ailleurs
         </h1>
         <img src={HomeCover} alt="Paysage pour couverture d'accueil" />
       </div>

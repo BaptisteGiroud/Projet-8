@@ -1,0 +1,151 @@
+/** Header */
+
+@media (max-width: 767.5px) {
+  .header {
+    margin: 20px auto;
+    &__nav {
+      gap: 20px;
+      a {
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+    }
+  }
+
+  /** Home */
+
+  .home-content {
+    &__band-home {
+      justify-content: left;
+      margin-bottom: 0;
+      img {
+        height: 111px;
+        border-radius: 15px;
+      }
+      &__txt {
+        padding: 15px;
+        font-size: 24px;
+        span {
+          display: block;
+        }
+      }
+    }
+    &__appartments {
+      grid-template-columns: 1fr;
+      background-color: rgba($color: #000000, $alpha: 0);
+      padding: 0;
+      gap: 30px;
+    }
+  }
+
+  .card {
+    img {
+      width: 700px;
+      max-height: 255px;
+    }
+  }
+
+  /** A propos */
+
+  .band-about {
+    margin-bottom: 30px;
+    img {
+      height: 111px;
+      border-radius: 15px;
+    }
+  }
+
+  .colaps__box {
+    margin: 0;
+  }
+
+  .collapse {
+    img {
+      transform: scale(0.8);
+    }
+    &__title {
+      font-size: 13px;
+      padding: 5px 10px;
+    }
+  }
+  .collapseHidden {
+    margin-bottom: 0;
+  }
+
+  /** Appartements */
+
+  .carousel {
+    &__pictures {
+      height: 255px;
+    }
+    &__nav {
+      .leftArrow {
+        padding: 145px 20px;
+        transform: scale(0.7);
+        left: 10px;
+      }
+      .rightArrow {
+        transform: scale(0.7);
+        padding: 145px 20px;
+        right: 10px;
+      }
+      div {
+        display: none;
+      }
+    }
+  }
+
+  .details {
+    &__infos {
+      flex-direction: column;
+    }
+    h2 {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    p {
+      font-weight: 500;
+    }
+    .tag {
+      ul {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        li {
+          font-size: 10px;
+          min-width: 90px;
+          height: 20px;
+          border-radius: 5px;
+          padding: 0 10px;
+        }
+      }
+    }
+    &__collapse {
+      flex-direction: column;
+      img {
+        transform: scale(0.8);
+      }
+      &__description {
+        width: 100%;
+      }
+      &__equipment {
+        width: 100%;
+      }
+    }
+  }
+
+  .profil {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    &__rate {
+      transform-origin: left;
+      transform: scale(0.6);
+    }
+    &__host {
+      font-size: 14px;
+      img {
+        width: 36px;
+      }
+    }
+  }
+}
