@@ -60,16 +60,23 @@
   }
 
   .collapse {
+    margin: -5px auto;
     img {
       transform: scale(0.8);
     }
     &__title {
       font-size: 13px;
-      padding: 5px 10px;
+      padding: 3px 10px;
+    }
+    &__content {
+      font-size: 14px;
     }
   }
   .collapseHidden {
     margin-bottom: 0;
+  }
+  .collapseExpend {
+    margin-bottom: 30px;
   }
 
   /** Appartements */
@@ -80,14 +87,14 @@
     }
     &__nav {
       .leftArrow {
-        padding: 145px 20px;
-        transform: scale(0.7);
-        left: 10px;
+        padding: 385px 40px;
+        transform-origin: left;
+        transform: scale(0.3);
       }
       .rightArrow {
-        transform: scale(0.7);
-        padding: 145px 20px;
-        right: 10px;
+        transform-origin: right;
+        transform: scale(0.3);
+        padding: 385px 40px;
       }
       div {
         display: none;
@@ -111,7 +118,7 @@
         display: grid;
         grid-template-columns: auto auto auto;
         li {
-          font-size: 10px;
+          font-size: 11px;
           min-width: 90px;
           height: 20px;
           border-radius: 5px;
@@ -146,6 +153,18 @@
       img {
         width: 36px;
       }
+    }
+  }
+
+  /** Erreur 404 */
+
+  .error {
+    margin: 20px 20px;
+    h1 {
+      font-size: 100px;
+    }
+    p {
+      font-size: 19px;
     }
   }
 }

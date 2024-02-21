@@ -9,8 +9,8 @@
   padding: 0; /* Set the default padding to 0 */
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none; /* Turn off numbered and unordered list decoration */
 }
 
@@ -63,4 +63,10 @@ body,
 html {
   height: 100%; /* Makes the body element full screen */
   scroll-behavior: smooth; /* Makes normal scrolling smooth */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

@@ -31,11 +31,11 @@ function Responsive() {
 
 /** Main */
 
-function Header() {
+function Header(checkActivePage) {
   let location = useLocation()
   let [activePage, setActivePage] = useState(location.pathname)
 
-  let checkActivePage = (page) => {
+  checkActivePage = (page) => {
     setActivePage(page)
   }
 
@@ -45,16 +45,20 @@ function Header() {
     <div className="header">
       <img src={logokasa} alt="Logo Kasa"></img>
       <nav className="header__nav">
-        <h3 className={activePage === '/' ? 'active' : ''}>
-          <Link to="/" onClick={() => checkActivePage('/')}>
-            Accueil
-          </Link>
-        </h3>
-        <h3 className={activePage === '/apropos' ? 'active' : ''}>
-          <Link to="/apropos" onClick={() => checkActivePage('/apropos')}>
-            À propos
-          </Link>
-        </h3>
+        <Link
+          to="/"
+          onClick={() => checkActivePage('/')}
+          className={activePage === '/' ? 'active' : ''}
+        >
+          Accueil
+        </Link>
+        <Link
+          to="/apropos"
+          onClick={() => checkActivePage('/apropos')}
+          className={activePage === '/apropos' ? 'active' : ''}
+        >
+          À propos
+        </Link>
       </nav>
     </div>
   )
