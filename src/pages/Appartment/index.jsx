@@ -14,23 +14,46 @@ function Appartment() {
   )
 
   /** Génération des stars */
-  let generateStarts = () => {
-    let html = ''
-    for (let i = 1; i <= 5; i++) {
-      let rating = parseInt(appartmentData.rating)
+  // let generateStarts = () => {
+  //   let html = ''
+  //   for (let i = 1; i <= 5; i++) {
+  //     let rating = parseInt(appartmentData.rating)
 
+  //     if (i <= rating) {
+  //       html += `<li><img src="${star}" alt="Etoile pleine" /></li>`
+  //     } else {
+  //       html += `<li><img src="${starGrey}" alt="Etoile vide" /></li>`
+  //     }
+  //   }
+  //   return (
+  //     <ul
+  //       className={'profil__rate'}
+  //       dangerouslySetInnerHTML={{ __html: html }}
+  //     />
+  //   )
+  // }
+
+  let generateStarts = () => {
+    let html = []
+    let rating = parseInt(appartmentData.rating)
+
+    for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        html += `<li><img src="${star}" alt="Etoile pleine" /></li>`
+        html.push(
+          <li key={i}>
+            <img src={star} alt="Etoile pleine" />
+          </li>
+        )
       } else {
-        html += `<li><img src="${starGrey}" alt="Etoile vide" /></li>`
+        html.push(
+          <li key={i}>
+            <img src={starGrey} alt="Etoile vide" />
+          </li>
+        )
       }
     }
-    return (
-      <ul
-        className={'profil__rate'}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-    )
+
+    return <ul className={'profil__rate'}>{html}</ul>
   }
 
   /** Recupération des data de l'appartement */
